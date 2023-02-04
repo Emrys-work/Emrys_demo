@@ -44,9 +44,9 @@ git clone <远程库地址>
 创建+切换分支：git checkout -b <branckname>   # 加上-b创建并切换
               git switch -c <branckname>
 创建分支：git branch <branckname>
-查看当前分支：git branch
 切换分支：git checkout <branckname>
          git switch <branckname>
+查看当前分支：git branch
 合并分支：git merge <branckname>
 删除分支：git branch -d <branckname>
 
