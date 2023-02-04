@@ -1,0 +1,50 @@
+1、安装设置
+git config --global user.name 'NAME'
+git config --global user.email 'EMAIL'
+
+2、创建版本库
+git init   # 把当前目录变成git可以管理的仓库
+添加文件到git仓库，分两步：
+  (1) git add <file>
+  (2) git commit -m <message>
+
+3、工作区状态查看
+git status   # 查看工作区状态
+git diff <file>   # 查看修改内容
+
+4、版本回退
+git log   # 查看提交历史，确定回退到那个版本
+git log --pretty=oneline   # 简化日志消息
+git reset --hard HEAD^/<commit id>   # 回退到上一个版本，HEAD指向的版本就是当前版本
+git reflog   # 查看命令历史，确定回到未来版本的commit id
+
+5、理解暂存区/git跟踪并管理修改
+
+6、撤销修改
+git checkout --<file>   # 丢弃工作区的修改,不包括添加到暂存区后的状态
+git reset HEAD <file>   # 把暂存区的修改撤销掉，重新放回工作区，再按上一步操作
+已经提交版本库，想要撤销本次提交，使用版本回退方法
+
+7、删除文件
+  （1）彻底删除：删除文件后，使用git rm <file>后再commit，同步版本库
+  （2）误删：使用git checkout -- <file>回复到版本库的最新版本
+
+8、远程仓库
+  （1）创建SSH Key: $ ssh-keygen -t rsa -C "youremail@example.com"
+       登录GitHub,添加本机id_rsa.pub公钥
+  （2）创建Git仓库，在本地创建仓库中运行命令
+        git remote add origin <Git仓库地址>   # origin是默认远程库的命名
+  （3）第一次推送master分支所有内容：git push -u origin master
+       此后每次提交：git push origin master
+
+ 9、从远程库克隆
+
+ 10、创建与合并分支
+
+
+
+
+
+
+
+
