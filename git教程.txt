@@ -27,7 +27,7 @@ git reset HEAD <file>   # 把暂存区的修改撤销掉，重新放回工作区
 
 7、删除文件
   （1）彻底删除：删除文件后，使用git rm <file>后再commit，同步版本库
-  （2）误删：使用git checkout -- <file>回复到版本库的最新版本
+  （2）误删：使用git checkout -- <file>恢复到版本库的最新版本
 
 8、远程仓库
   （1）创建SSH Key: $ ssh-keygen -t rsa -C "youremail@example.com"
@@ -38,13 +38,29 @@ git reset HEAD <file>   # 把暂存区的修改撤销掉，重新放回工作区
        此后每次提交：git push origin master
 
  9、从远程库克隆
+git clone <远程库地址>
 
  10、创建与合并分支
+创建+切换分支：git checkout -b <branckname>   # 加上-b创建并切换
+              git switch -c <branckname>
+创建分支：git branch <branckname>
+查看当前分支：git branch
+切换分支：git checkout <branckname>
+         git switch <branckname>
+合并分支：git merge <branckname>
+删除分支：git branch -d <branckname>
 
+11、解决冲突
+把Git合并失败的文件手动编辑为我们希望的内容，在提交
+git log --graph   # 查看分支合并图
+git log --graph --pretty=oneline --abbrev-commit
 
+12、分支管理策略
 
+13、bug分支
 
+14、Feature分支
 
+15、多人协作
 
-
-
+远程库连接及推送
