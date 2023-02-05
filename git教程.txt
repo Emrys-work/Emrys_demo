@@ -21,7 +21,7 @@ git reflog   # 查看命令历史，确定回到未来版本的commit id
 5、理解暂存区/git跟踪并管理修改
 
 6、撤销修改
-git checkout --<file>   # 丢弃工作区的修改,不包括添加到暂存区后的状态
+git checkout -- <file>   # 丢弃工作区的修改,不包括添加到暂存区后的状态
 git reset HEAD <file>   # 把暂存区的修改撤销掉，重新放回工作区，再按上一步操作
 已经提交版本库，想要撤销本次提交，使用版本回退方法
 
@@ -56,10 +56,17 @@ git log --graph   # 查看分支合并图
 git log --graph --pretty=oneline --abbrev-commit
 
 12、分支管理策略
+合并分支时强制禁用Fast forward模式:
+  （1）git merge --no-ff -m '描述' <branchname>   # 普通模式合并，合并后的历史有分支
+  （2）git log --graph --pretty=oneline --abbrev-commit   # 查看日志的合并记录
 
 13、bug分支
+  （1）修复bug时，通过创建新的bug分支进行修复，然后合并，最后删除
+  （2）手头工作没完成，先把工作线程git stash一下，然后修复bug后再git stash pop,回到工作现场
+  （3）在master分支上修复的bug，想要合并到当前dev分支，可以用git cherry-pick <commit>命令，把bug提交的修改“复制”到当前分支，避免重复劳动
 
 14、Feature分支
+丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
 
 15、多人协作
 
