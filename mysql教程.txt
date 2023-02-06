@@ -1,0 +1,60 @@
+1、数据库连接、创建、删除、选择
+  连接：mysql -u -root -p
+  创建：CREATE DATABASE IF NOT EXISTS <数据库名> DEFAULT CHARSET utf8 COLLATE utf8_general_ci;
+  删除：drop database <数据库名>;
+  列出数据库：SHOW DATABASES;
+  选择：use <数据库名>;
+  列出数据表：SHOW TABLES;
+  查看表结构：DESC TABLES;
+  显示数据表属性：SHOW COLUMNS FROM runoob_tbl;
+  显示数据表的详细索引信息：SHOW INDEX FROM runoob_tbl;
+  输出Mysql数据库管理系统的性能及统计信息：SHOW TABLE STATUS  FROM RUNOOB;
+  查看创建表sql语句：SHOW CREATE TABLE students;
+  退出mysql:EXIT
+
+创建数据表
+  CREATE TABLE table_name (column_name column_type);
+
+2、查询数据
+  基本查询：SELECT * FROM <表名>;
+  条件查询：SELECT * FROM <表名> WHERE <条件表达式>;
+  投影查询：SELECT 列1, 列2, 列3 FROM <表名> WHERE <条件表达式>;
+  排序：SELECT * FROM <表名> ORDER BY score <DESC>;
+  分页查询：SELECT * FROM <表名> LIMIT <M> OFFSET <N>;
+  聚合查询：SELECT COUNT(*) FROM students;   # 常用函数SUM()、AVG()、MAX()、MIN()
+  多表查询：SELECT * FROM <表1>,<表2>……;
+  连接查询：SELECT ... FROM tableA ??? JOIN tableB ON tableA.column1 = tableB.column2;
+
+3、修改数据
+  插入（）：INSERT INTO <表名> (字段1, 字段2, ...) VALUES (值1, 值2, ...);
+  更新（）：UPDATE <表名> SET 字段1=值1, 字段2=值2, ... WHERE ...;
+  删除（）：DELETE FROM <表名> WHERE ...;
+
+事务（四种隔离级别）
+  begin;
+  commit;
+  rollback;
+
+ALTER命令
+  删除字段：ALTER TABLE testalter_tbl  DROP i;
+  添加字段：ALTER TABLE testalter_tbl ADD i INT FIRST;
+  修改字段：ALTER TABLE testalter_tbl MODIFY c CHAR(10);
+           ALTER TABLE testalter_tbl CHANGE j j INT;
+  设置字段默认值：ALTER TABLE testalter_tbl MODIFY j BIGINT NOT NULL DEFAULT 100;
+  修改字段默认值：ALTER TABLE testalter_tbl ALTER i SET DEFAULT 1000;
+  删除字段默认值：ALTER TABLE testalter_tbl ALTER i DROP DEFAULT;
+  修改数据表类型：ALTER TABLE testalter_tbl ENGINE = MYISAM;
+  修改表名：ALTER TABLE testalter_tbl RENAME TO alter_tbl;
+
+临时表
+  CREATE TEMPORARY TABLE table_name (column_name column_type);
+
+复制表
+  （1）获取表结构：SHOW CREATE TABLE runoob_tbl \G;
+  （2）修改表名：CREATE CLONE_TABLE table_name (column_name column_type);
+  （3）拷贝数据：INSERT INTO clone_tbl (column_name) SELECT (column_name) FROM runoob_tbl;
+
+元数据
+
+序列使用
+
