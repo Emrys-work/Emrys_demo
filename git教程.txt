@@ -13,12 +13,13 @@ git status   # 查看工作区状态
 git diff <file>   # 查看修改内容
 
 4、版本回退
-git log   # 查看提交历史，确定回退到那个版本
+git log   # 查看提交历史命令，确定回退到那个版本
 git log --pretty=oneline   # 简化日志消息
 git reset --hard HEAD^/<commit id>   # 回退到上一个版本，HEAD指向的版本就是当前版本
-git reflog   # 查看命令历史，确定回到未来版本的commit id
+git reflog   # 查看每一次命令历史，可查询未来版本的commit id
 
-5、理解暂存区/git跟踪并管理修改
+5、理解暂存区和工作区/git跟踪并管理修改
+git diff head -- <file>   # 查看工作区和版本库里面最新版本的区别
 
 6、撤销修改
 git checkout -- <file>   # 丢弃工作区的修改,不包括添加到暂存区后的状态
