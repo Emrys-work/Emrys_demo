@@ -1,1 +1,2 @@
-print('这是第二个文件代码！')
+with open('tmp.txt', 'a+') as f:
+    f.write('I love qxy forever!\n')

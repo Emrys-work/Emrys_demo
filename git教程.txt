@@ -63,11 +63,16 @@ git log --graph --pretty=oneline --abbrev-commit
 
 13、bug分支
   （1）修复bug时，通过创建新的bug分支进行修复，然后合并，最后删除
-  （2）手头工作没完成，先把工作线程git stash一下，然后修复bug后再git stash pop,回到工作现场
+  （2）手头工作没完成，先把工作线程git stash一下，然后修复bug后再
+       git stash pop回到工作现场，并删除stash内容
+       git stash apply回复，但stash内容并不删除
+       git stash drop删除stash内容
+       git stash list查看内容
   （3）在master分支上修复的bug，想要合并到当前dev分支，
-      可以用git cherry-pick <commit id>命令，把bug提交的修改“复制”到当前分支，避免重复劳动
+       可以用git cherry-pick <commit id>命令，把bug提交的修改“复制”到当前分支，避免重复劳动
 
 14、Feature分支
+开发一个新的feature,最好新建一个分支
 丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
 
 15、多人协作
