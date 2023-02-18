@@ -19,7 +19,7 @@ git reset --hard HEAD^/<commit id>   # 回退到上一个版本，HEAD指向的�
 git reflog   # 查看每一次命令历史，可查询未来版本的commit id
 
 5、理解暂存区和工作区/git跟踪并管理修改
-git diff head -- <file>   # 查看工作区和版本库里面最新版本的区别
+git diff head -- <file>   # 查看工作区/暂存区和版本库里面最新版本的区别
 
 6、撤销修改
   （1）git checkout -- <file>   # 丢弃工作区的修改,不包括添加到暂存区后的状态
@@ -37,6 +37,7 @@ git diff head -- <file>   # 查看工作区和版本库里面最新版本的区�
         git remote add origin <Git仓库地址>   # origin是默认远程库的命名
   （3）第一次推送master分支所有内容：git push -u origin master
        此后每次提交：git push origin master
+  （4）删除远程库：git remote rm origin
 
  9、从远程库克隆
 git clone <远程库地址>
